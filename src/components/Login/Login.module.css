@@ -38,6 +38,11 @@
   background: #f6dbfc;
 }
 
+/* .control.invalid input {
+  border-color: red;
+  background: #fbdada;
+} */
+
 .control.invalid input {
   border-color: red;
   background: #fbdada;

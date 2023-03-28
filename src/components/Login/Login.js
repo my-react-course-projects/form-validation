@@ -41,10 +41,10 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   // Reducer Function for receiving email input and validating the email input
-  const [emailState, dispatchEmailAction] = useReducer( emailReducer, { enteredEmail: '', emailIsValid: false } );
+  const [emailState, dispatchEmailAction] = useReducer( emailReducer, { enteredEmail: '', emailIsValid: true });
 
   // Reducer Function for receiving email input and validating the email input
-  const [passwordState, dispatchPasswordAction ] = useReducer(passwordReducer, { enteredPassword: '', passwordIsValid: false});
+  const [passwordState, dispatchPasswordAction ] = useReducer(passwordReducer, { enteredPassword: '', passwordIsValid: true });
 
   const { emailIsValid } = emailState;
   const { passwordIsValid } = passwordState;
@@ -96,7 +96,7 @@ const Login = (props) => {
     <Card className={classes.login}>
         <form onSubmit={submitHandler}>
             <div
-              className={`${classes.control} ${ emailState.emailIsValid === true ? '' : classes.invalid }`}
+              className={`${classes.control} ${ emailState.emailIsValid === false ? classes.invalid : '' }`}
             >
               <label htmlFor="email">E-Mail</label>
               <input
